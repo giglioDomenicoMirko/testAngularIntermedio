@@ -8,12 +8,20 @@ import { AppComponent } from './app.component';
 
 import { HeaderNavbarComponent } from './layout/header-navbar/header-navbar.component';
 import { HomeComponent } from './modules/home/home.component';
+import { CardViewComponent } from './modules/pages/card-view/card-view.component';
+import { ListViewComponent } from './modules/pages/list-view/list-view.component';
+import { NewUserFormComponent } from './modules/pages/new-user-form/new-user-form.component';
+import { OrdersListComponent } from './modules/pages/orders-list/orders-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderNavbarComponent,
-    HomeComponent
+    HomeComponent,
+    CardViewComponent,
+    ListViewComponent,
+    NewUserFormComponent,
+    OrdersListComponent
   ],
   imports: [
     BrowserModule,
