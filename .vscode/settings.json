@@ -1,0 +1,30 @@
+{
+    "restoreTerminals.terminals": [
+
+        {
+          "splitTerminals": [
+            {
+              "name": "JSON Server",
+              "commands": ["json-server src/app/shared/database/database.json"],
+              "shouldRunCommands": false
+            }
+          ]
+        },
+        {
+            "splitTerminals": [
+              {
+                "name": "NG Server",
+                "commands": ["ng serve -o"],
+                "shouldRunCommands": false
+              }
+            ]
+          },
+        {
+          "splitTerminals": [
+            {
+              "name": "Console"
+            }
+          ]
+        }
+      ]
+}
