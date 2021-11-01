@@ -6,6 +6,7 @@ import { CardViewComponent } from './pages/card-view/card-view.component';
 import { ListViewComponent } from './pages/list-view/list-view.component';
 import { NewUserFormComponent } from './pages/new-user-form/new-user-form.component';
 import { OrdersListComponent } from './pages/orders-list/orders-list.component';
+import { SingleCardComponent } from './pages/card-view/single-card/single-card.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { OrdersListComponent } from './pages/orders-list/orders-list.component';
     CardViewComponent,
     ListViewComponent,
     NewUserFormComponent,
-    OrdersListComponent
+    OrdersListComponent,
+    SingleCardComponent
   ],
   imports: [
     CommonModule,
