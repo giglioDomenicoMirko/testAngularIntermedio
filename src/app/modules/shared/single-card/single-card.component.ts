@@ -9,6 +9,7 @@ import { IUser } from 'src/app/models/User';
 export class SingleCardComponent implements OnInit {
 
   @Input() user!: IUser;
+  @Input() view!: string;
   @Output() deleted = new EventEmitter;
 
   contOrders = 0;
@@ -16,7 +17,7 @@ export class SingleCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.loadCounterOrders();
+    this.loadCounterOrders();    
   }
 
   loadCounterOrders() {

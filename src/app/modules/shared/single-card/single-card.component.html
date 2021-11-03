@@ -1,0 +1,58 @@
+<div class="border shadow" *ngIf="view === 'card'">
+    <div>
+        <img src="{{ user.imageUrl }}" alt="FOTO GATTO">
+    </div>
+    <hr>
+    <div class="p-2">
+        <div>
+            <span>{{ user.name }} {{ user.surname }}</span>
+        </div>
+        <div>
+            <span>{{ user.mail }}</span>
+        </div>
+        <div>
+            <span>{{ user.location.address }}, {{ user.location.city }}</span>
+        </div>
+        <div>
+            <span>Ordini: {{ contOrders }}</span>
+        </div>
+        <div>
+            <span>
+                <a href="#">View orders</a>
+            </span>
+        </div>
+    </div>
+    <div class="my-3">
+        <button class="mx-2 btn btn-primary" (click)="editUser()">Edit</button>
+        <button class="mx-2 btn btn-danger" (click)="deleteUser()">Delete</button>
+    </div>
+</div>
+
+<!--  -->
+
+<!-- <div class="container" *ngIf="view === 'list'"> -->
+    <div class="row" *ngIf="view === 'list'">
+        <div class="col-1">
+            <img class="circleImage" src="{{ user.imageUrl }}" alt="FOTO GATTO">
+        </div>
+        <div class="col verticalAlign">
+            {{ user.name }} {{ user.surname }}
+        </div>
+        <div class="col verticalAlign">
+            {{ user.mail }}
+        </div>
+        <div class="col verticalAlign">
+            {{ user.location.address }}, {{ user.location.city }}
+        </div>
+        <div class="col-1 verticalAlign">
+            {{ contOrders }}
+        </div>
+        <div class="col verticalAlign">
+            <a href="#">View orders</a>
+        </div>
+        <div class="col-4 verticalAlign">
+            <button class="mx-2 btn btn-primary" (click)="editUser()">Edit</button>
+            <button class="mx-2 btn btn-danger" (click)="deleteUser()">Delete</button>
+        </div>
+    </div>
+<!-- </div> -->

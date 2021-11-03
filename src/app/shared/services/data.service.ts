@@ -20,6 +20,7 @@ export class DataService {
   }
 
   deleteUser(user: IUser) {
-    this.httpClient.delete('http://localhost:3000/anagrafica/' + user.id).subscribe();
+    alert(`DELETE ${user.id} - Operazione momentaneamente bloccata`);
+    // this.httpClient.delete('http://localhost:3000/anagrafica/' + user.id).subscribe();
   }
 }

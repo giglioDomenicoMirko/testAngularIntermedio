@@ -1,1 +1,26 @@
-<p>list-view works!</p>
+<div class="container" *ngIf="anagrafica.length > 0; else noUser">
+    
+    <!-- NON CANCELLARE - DA REVISIONARE -->
+    <!-- <div class="row">
+        <div class="col-1"></div>
+        <div class="col">Name</div>
+        <div class="col">Mail</div>
+        <div class="col">Address</div>
+        <div class="col">Orders: #</div>
+        <div class="col"></div>    
+    </div> -->
+    
+    <div class="shadow mb-3" *ngFor="let user of anagrafica">
+        <gdm-single-card [user]="user" (deleted)="deleteUser($event)" [view]="'list'"></gdm-single-card>
+    </div>
+</div>
+
+<ng-template #noUser>
+    <div class="container">
+        <hr>
+        <h1 class="text-center text-danger">Non sono presenti utenti nel database!</h1>
+        <hr>
+    </div>
+</ng-template>
+
+

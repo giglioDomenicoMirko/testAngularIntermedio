@@ -1,0 +1,25 @@
+hr {
+    color: black;
+    margin: 0;
+}
+
+button {
+    width: 7em;
+}
+
+img {
+    width: 258px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.circleImage {
+    width: 3em;
+    height: 3em;
+    border-radius: 1.5em;
+    margin: 1em;
+}
+
+.verticalAlign {
+    align-self: center;
+}
