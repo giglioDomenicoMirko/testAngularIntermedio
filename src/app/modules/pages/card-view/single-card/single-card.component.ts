@@ -24,4 +24,8 @@ export class SingleCardComponent implements OnInit {
     }
   }
 
+  editUser() {
+    alert(`This function is under costruction`);
+  }
+
 }
