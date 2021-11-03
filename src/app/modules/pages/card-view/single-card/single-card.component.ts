@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { IUser } from 'src/app/models/User';
 
 @Component({
   selector: 'gdm-single-card',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SingleCardComponent implements OnInit {
 
+  @Input() user!: IUser;
+
+  contOrders = 0;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.loadCounterOrders();
+  }
+
+  loadCounterOrders() {
+    for(let order in this.user.orders) {
+      this.contOrders++;
+    }
   }
 
 }

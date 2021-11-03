@@ -1,20 +1,25 @@
 <div class="border shadow">
     <div>
-        <img src="#" alt="FOTO GATTO">
+        <img src="{{ user.imageUrl }}" alt="FOTO GATTO">
     </div>
     <hr>
     <div class="p-2">
         <div>
-            Mario Rossi
+            <span>{{ user.name }} {{ user.surname }}</span>
         </div>
         <div>
-            mario.rossi.gmail.com
+            <span>{{ user.mail }}</span>
         </div>
         <div>
-            ordini: 3
+            <span>{{ user.location.address }}, {{ user.location.city }}</span>
         </div>
         <div>
-            <a href="#">View orders</a>
+            <span>Ordini: {{ contOrders }}</span>
+        </div>
+        <div>
+            <span>
+                <a href="#">View orders</a>
+            </span>
         </div>
     </div>
     <div class="my-3">
