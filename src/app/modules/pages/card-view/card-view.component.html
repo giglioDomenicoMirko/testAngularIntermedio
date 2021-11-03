@@ -1,7 +1,14 @@
 <div class="container">
-    <div class="row">
+    <div class="row" *ngIf="anagrafica.length > 0; else noUser">
         <div class="row-3 m-3" *ngFor="let user of anagrafica">
             <gdm-single-card [user]="user" (deleted)="deleteUser($event)"></gdm-single-card>
         </div>
     </div>
 </div>
+
+<ng-template #noUser>
+    <hr>
+    <h1 class="text-center text-danger">Non sono presenti utenti nel database!</h1>
+    <hr>
+</ng-template>
+
