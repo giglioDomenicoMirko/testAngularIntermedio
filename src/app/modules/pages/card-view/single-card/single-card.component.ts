@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IUser } from 'src/app/models/User';
 
 @Component({
@@ -9,6 +9,7 @@ import { IUser } from 'src/app/models/User';
 export class SingleCardComponent implements OnInit {
 
   @Input() user!: IUser;
+  @Output() deleted = new EventEmitter;
 
   contOrders = 0;
 
@@ -26,6 +27,10 @@ export class SingleCardComponent implements OnInit {
 
   editUser() {
     alert(`This function is under costruction`);
+  }
+
+  deleteUser() {
+    this.deleted.emit(this.user);
   }
 
 }

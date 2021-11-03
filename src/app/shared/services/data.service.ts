@@ -18,4 +18,8 @@ export class DataService {
   getAnagrafica(): Observable<IUser[]> {
     return this.httpClient.get<IUser[]>('http://localhost:3000/anagrafica');
   }
+
+  deleteUser(user: IUser) {
+    this.httpClient.delete('http://localhost:3000/anagrafica/' + user.id).subscribe();
+  }
 }
