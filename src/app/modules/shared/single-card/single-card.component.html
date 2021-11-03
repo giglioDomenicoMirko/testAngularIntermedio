@@ -1,4 +1,4 @@
-<div class="border shadow">
+<div class="border shadow" *ngIf="view === 'card'">
     <div>
         <img src="{{ user.imageUrl }}" alt="FOTO GATTO">
     </div>
@@ -26,4 +26,8 @@
         <button class="mx-2 btn btn-primary" (click)="editUser()">Edit</button>
         <button class="mx-2 btn btn-danger" (click)="deleteUser()">Delete</button>
     </div>
+</div>
+
+<div *ngIf="view === 'list'">
+
 </div>
