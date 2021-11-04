@@ -18,7 +18,7 @@
         </div>
         <div>
             <span>
-                <a href="#">View orders</a>
+                <button class="btn text-primary" (click)="showOrders()">View orders</button>
             </span>
         </div>
     </div>
@@ -46,7 +46,8 @@
     </div>
     <div class="col-2 verticalAlign">
         {{ contOrders }}
-        <a href="#">View orders</a>
+        <!-- <a (click)="showOrders()">View orders</a> -->
+        <button class="btn text-primary" (click)="showOrders()">View orders</button>
     </div>
     <!-- <div class="col verticalAlign">
     </div> -->
@@ -57,4 +58,4 @@
 </div>
 </ng-container>
 
-<gdm-orders-view></gdm-orders-view>
+<gdm-orders-view [user]="user" *ngIf="viewOrders === true"></gdm-orders-view>

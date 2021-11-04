@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { IUser } from 'src/app/models/User';
 
 @Component({
   selector: 'gdm-orders-view',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./orders-view.component.scss']
 })
 export class OrdersViewComponent implements OnInit {
+
+  @Input() user!: IUser;
 
   constructor() { }
 

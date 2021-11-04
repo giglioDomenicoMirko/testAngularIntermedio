@@ -14,6 +14,8 @@ export class SingleCardComponent implements OnInit {
 
   contOrders = 0;
 
+  viewOrders = false;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -32,6 +34,10 @@ export class SingleCardComponent implements OnInit {
 
   deleteUser() {
     this.deleted.emit(this.user);
+  }
+
+  showOrders() {
+    this.viewOrders = true;
   }
 
 }
