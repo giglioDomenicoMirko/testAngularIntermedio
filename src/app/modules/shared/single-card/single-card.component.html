@@ -30,29 +30,29 @@
 
 <!--  -->
 
-<!-- <div class="container" *ngIf="view === 'list'"> -->
-    <div class="row" *ngIf="view === 'list'">
-        <div class="col-1">
-            <img class="circleImage" src="{{ user.imageUrl }}" alt="FOTO GATTO">
-        </div>
-        <div class="col verticalAlign">
-            {{ user.name }} {{ user.surname }}
-        </div>
-        <div class="col verticalAlign">
-            {{ user.mail }}
-        </div>
-        <div class="col verticalAlign">
-            {{ user.location.address }}, {{ user.location.city }}
-        </div>
-        <div class="col-1 verticalAlign">
-            {{ contOrders }}
-        </div>
-        <div class="col verticalAlign">
-            <a href="#">View orders</a>
-        </div>
-        <div class="col-4 verticalAlign">
-            <button class="mx-2 btn btn-primary" (click)="editUser()">Edit</button>
-            <button class="mx-2 btn btn-danger" (click)="deleteUser()">Delete</button>
-        </div>
+<ng-container *ngIf="view === 'list'">
+<div class="row shadow">
+    <div class="col-1">
+        <img class="circleImage" src="{{ user.imageUrl }}" alt="FOTO GATTO">
     </div>
-<!-- </div> -->
+    <div class="col-2 verticalAlign">
+        {{ user.name }} {{ user.surname }}
+    </div>
+    <div class="col-2 verticalAlign">
+        {{ user.mail }}
+    </div>
+    <div class="col-2 verticalAlign">
+        {{ user.location.address }}, {{ user.location.city }}
+    </div>
+    <div class="col-2 verticalAlign">
+        {{ contOrders }}
+        <a href="#">View orders</a>
+    </div>
+    <!-- <div class="col verticalAlign">
+    </div> -->
+    <div class="col-3 verticalAlign">
+        <button class="mx-2 btn btn-primary btn-sm" (click)="editUser()">Edit</button>
+        <button class="mx-2 btn btn-danger btn-sm" (click)="deleteUser()">Delete</button>
+    </div>
+</div>
+</ng-container>
