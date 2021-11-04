@@ -12,11 +12,14 @@ export class OrdersViewComponent implements OnInit {
   @Input() orders!: any;
   @Output() exitOrders = new EventEmitter();
 
-  
+  totalPrice = 0;
 
   constructor() { }
 
   ngOnInit(): void {
+    for(let order of this.orders){
+      this.totalPrice += order.quantity * order.product.price;
+    }
   }
 
   exitOrderPage() {
