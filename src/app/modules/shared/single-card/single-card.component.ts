@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 import { IUser } from 'src/app/models/User';
 
 @Component({
@@ -13,6 +13,8 @@ export class SingleCardComponent implements OnInit {
   @Output() deleted = new EventEmitter;
 
   contOrders = 0;
+
+  viewOrders = false;
 
   constructor() { }
 
@@ -32,6 +34,15 @@ export class SingleCardComponent implements OnInit {
 
   deleteUser() {
     this.deleted.emit(this.user);
+  }
+
+  showOrders() {
+    this.viewOrders = true;
+  }
+  
+  @HostListener('document:keydown.escape')
+  unShowOrders() {
+    this.viewOrders = false;
   }
 
 }
