@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IUser } from 'src/app/models/User';
 
 @Component({
@@ -9,10 +9,15 @@ import { IUser } from 'src/app/models/User';
 export class OrdersViewComponent implements OnInit {
 
   @Input() user!: IUser;
+  @Output() exitOrders = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  exitOrderPage() {
+    this.exitOrders.emit();
   }
 
 }

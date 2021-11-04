@@ -40,4 +40,8 @@ export class SingleCardComponent implements OnInit {
     this.viewOrders = true;
   }
 
+  unShowOrders() {
+    this.viewOrders = false;
+  }
+
 }

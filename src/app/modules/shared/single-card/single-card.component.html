@@ -48,6 +48,8 @@
         {{ contOrders }}
         <!-- <a (click)="showOrders()">View orders</a> -->
         <button class="btn text-primary" (click)="showOrders()">View orders</button>
+        <!-- <button class="btn text-primary" (click)="this.viewOrders = true">View orders</button> -->
+
     </div>
     <!-- <div class="col verticalAlign">
     </div> -->
@@ -58,4 +60,4 @@
 </div>
 </ng-container>
 
-<gdm-orders-view [user]="user" *ngIf="viewOrders === true"></gdm-orders-view>
+<gdm-orders-view [user]="user" *ngIf="viewOrders === true" (exitOrders)="unShowOrders()"></gdm-orders-view>
