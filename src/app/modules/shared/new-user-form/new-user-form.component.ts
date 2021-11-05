@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { ViewService } from 'src/app/shared/services/view.service';
 
 @Component({
   selector: 'gdm-new-user-form',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewUserFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private view: ViewService) { }
 
   ngOnInit(): void {
+  }
+
+  @HostListener('document:keydown.escape')
+  exit() {
+    this.view.exit();
+
   }
 
 
