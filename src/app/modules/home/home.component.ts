@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ViewService } from 'src/app/shared/services/view.service';
 
 @Component({
   selector: 'gdm-home',
@@ -7,11 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  newUserFormView = false;
+  newUserFormView!: boolean;
 
-  constructor() { }
+  constructor(private view: ViewService) { }
 
   ngOnInit(): void {
+    this.view.subscribeViewFlag().subscribe(data => {
+      this.newUserFormView = data;
+    })
   }
 
 }
