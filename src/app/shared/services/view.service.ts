@@ -6,13 +6,17 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class ViewService {
 
-  private newUserFormViewObservable = new BehaviorSubject<boolean>(true);
+  private newUserFormViewObservable = new BehaviorSubject<boolean>(false);
   public newuserFormFlag$ = this.newUserFormViewObservable.asObservable();
 
   constructor() { }
 
   subscribeViewFlag(): Observable<boolean> {
     return this.newuserFormFlag$;
+  }
+
+  view() {
+    this.newUserFormViewObservable.next(true);
   }
 
   exit() {
