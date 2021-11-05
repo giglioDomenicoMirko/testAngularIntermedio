@@ -8,7 +8,7 @@ import { OrdersListComponent } from './pages/orders-list/orders-list.component';
 const routes: Routes = [
   { path: 'home', component: CardViewComponent },
   { path: 'list', component: ListViewComponent },
-  { path: 'new_user', component: NewUserFormComponent },
+  // { path: 'new_user', component: NewUserFormComponent },
   { path: 'order_list', component: OrdersListComponent },
   { path: '**', redirectTo: 'home'}
 
