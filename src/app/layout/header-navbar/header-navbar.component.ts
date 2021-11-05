@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ViewService } from 'src/app/shared/services/view.service';
 
 @Component({
   selector: 'gdm-header-navbar',
@@ -7,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderNavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private view: ViewService) { }
 
   ngOnInit(): void { }
+
+  viewNewForm() {
+    this.view.view();
+  }
 
 }
