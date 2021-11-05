@@ -12,4 +12,10 @@ export class NewUserFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  /* funzione momentanea */
+  alert(text: string) {
+    alert(text);
+  }
+
 }
