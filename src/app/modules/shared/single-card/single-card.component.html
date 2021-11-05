@@ -1,6 +1,6 @@
 <div class="border shadow" *ngIf="view === 'card'">
     <div>
-        <img src="{{ user.imageUrl }}" alt="FOTO GATTO">
+        <img src="{{ user.imageUrl }}" alt="FOTO {{user.name}}">
     </div>
     <hr>
     <div class="p-2">
@@ -33,7 +33,7 @@
 <ng-container *ngIf="view === 'list'">
 <div class="row shadow">
     <div class="col-1">
-        <img class="circleImage" src="{{ user.imageUrl }}" alt="FOTO GATTO">
+        <img class="circleImage" src="{{ user.imageUrl }}" alt="FOTO {{user.name}}">
     </div>
     <div class="col-2 verticalAlign">
         {{ user.name }} {{ user.surname }}

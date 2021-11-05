@@ -1,32 +1,31 @@
 <div class="overlay" (click)="exit()"></div>
 <div class="newUserFormContainer p-5 text-center">
     <h1>New Users</h1>
-    <form>
+    <form #f="ngForm" (ngSubmit)="saveUser(f)">
         <div>
             <label for="name">Name</label>
         </div>
         <div class="mb-4">
-            <input type="text" name="name">
+            <input type="text" name="name" ngModel>
         </div>
 
         <div>
             <label for="email">Mail</label>
         </div>
         <div class="mb-4">
-            <input type="email" name="email">
+            <input type="email" name="email" ngModel>
         </div>
         
         <div>
             <label for="address">Address</label>
         </div>
         <div class="mb-4">
-            <input type="text" name="address">
+            <input type="text" name="address" ngModel>
         </div>
         
         <div>
-            <!-- MOMENTANEAMENTE RICHIAMANO LE FUNZIONI PER L'ALLERT -->
             <button type="button" class="btn btn-danger mr-2 btn-lg" (click)="exit()">Cancel</button>
-            <button type="button" class="btn btn-primary ml-2 btn-lg" (click)="alert('SAVE')">Save</button>
+            <button type="submit" class="btn btn-primary ml-2 btn-lg">Save</button>
         </div>
     </form>
 </div>

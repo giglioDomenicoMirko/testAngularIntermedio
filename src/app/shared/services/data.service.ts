@@ -19,8 +19,19 @@ export class DataService {
     return this.httpClient.get<IUser[]>('http://localhost:3000/anagrafica');
   }
 
+  saveUser(user: any) {
+    const userFormat = {
+      name: user.name,
+      mail: user.email,
+      location: {
+        address: user.address
+      },
+      orders: []
+    }
+    this.httpClient.post('http://localhost:3000/anagrafica', userFormat).subscribe();
+  }
+
   deleteUser(user: IUser) {
-    // alert(`DELETE ${user.id} - Operazione momentaneamente bloccata`);
     this.httpClient.delete('http://localhost:3000/anagrafica/' + user.id).subscribe();
   }
 }
