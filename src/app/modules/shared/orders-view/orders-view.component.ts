@@ -1,6 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { IOrder } from 'src/app/models/Order';
-import { IUser } from 'src/app/models/User';
 
 @Component({
   selector: 'gdm-orders-view',
