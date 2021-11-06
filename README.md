@@ -1,5 +1,7 @@
 # Test Angular intermedio
 
+## [Documentazione](/documentation/index.html) creata con [campodoc](https://compodoc.app)
+
 Riprodurre le seguenti schermate
 
 ![desktop-1](https://user-images.githubusercontent.com/83005551/139654879-a07f29ce-af5d-496f-821b-f482cba155dc.png)
