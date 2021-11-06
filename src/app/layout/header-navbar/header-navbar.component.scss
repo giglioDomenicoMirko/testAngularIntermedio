@@ -8,6 +8,8 @@ a {
 	}
 }
 
-button:hover {
-	font-weight: bold;
+button {
+	&:hover {
+		font-weight: bold;
+	}
 }

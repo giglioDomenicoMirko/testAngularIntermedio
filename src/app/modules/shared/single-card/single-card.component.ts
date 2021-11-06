@@ -1,5 +1,7 @@
 import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
+
 import { IUser } from 'src/app/models/User';
+
 import { DataService } from 'src/app/shared/services/data.service';
 import { ViewService } from 'src/app/shared/services/view.service';
 
@@ -21,17 +23,13 @@ export class SingleCardComponent implements OnInit {
   constructor(private dataService: DataService, private viewService: ViewService) { }
 
   ngOnInit(): void {
-    this.loadCounterOrders();    
-  }
-
-  loadCounterOrders() {
-    for(let order in this.user.orders) {
+    /* FUNZIONE DA MODIFICARE PER CARICARE IL CONTATORE */
+    for (let order in this.user.orders) {
       this.contOrders++;
     }
   }
 
   editUser() {
-    // alert(`This function is under costruction`);
     this.viewService.view();
     this.dataService.userTemp = this.user;
   }
@@ -43,7 +41,7 @@ export class SingleCardComponent implements OnInit {
   showOrders() {
     this.viewOrders = true;
   }
-  
+
   @HostListener('document:keydown.escape')
   unShowOrders() {
     this.viewOrders = false;

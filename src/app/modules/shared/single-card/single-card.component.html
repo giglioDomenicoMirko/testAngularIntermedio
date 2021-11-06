@@ -31,33 +31,28 @@
 <!--  -->
 
 <ng-container *ngIf="view === 'list'">
-<div class="row shadow">
-    <div class="col-1">
-        <img class="circleImage" src="{{ user.imageUrl }}" alt="FOTO {{user.name}}">
+    <div class="row shadow">
+        <div class="col-1">
+            <img class="circleImage" src="{{ user.imageUrl }}" alt="FOTO {{user.name}}">
+        </div>
+        <div class="col-2 verticalAlign">
+            {{ user.name }} {{ user.surname }}
+        </div>
+        <div class="col-2 verticalAlign">
+            {{ user.mail }}
+        </div>
+        <div class="col-2 verticalAlign">
+            {{ user.location.address }}, {{ user.location.city }}
+        </div>
+        <div class="col-2 verticalAlign">
+            {{ contOrders }}
+            <button class="btn text-primary" (click)="showOrders()">View orders</button>
+        </div>
+        <div class="col-3 verticalAlign">
+            <button class="mx-2 btn btn-primary btn-sm" (click)="editUser()">Edit</button>
+            <button class="mx-2 btn btn-danger btn-sm" (click)="deleteUser()">Delete</button>
+        </div>
     </div>
-    <div class="col-2 verticalAlign">
-        {{ user.name }} {{ user.surname }}
-    </div>
-    <div class="col-2 verticalAlign">
-        {{ user.mail }}
-    </div>
-    <div class="col-2 verticalAlign">
-        {{ user.location.address }}, {{ user.location.city }}
-    </div>
-    <div class="col-2 verticalAlign">
-        {{ contOrders }}
-        <!-- <a (click)="showOrders()">View orders</a> -->
-        <button class="btn text-primary" (click)="showOrders()">View orders</button>
-        <!-- <button class="btn text-primary" (click)="this.viewOrders = true">View orders</button> -->
-
-    </div>
-    <!-- <div class="col verticalAlign">
-    </div> -->
-    <div class="col-3 verticalAlign">
-        <button class="mx-2 btn btn-primary btn-sm" (click)="editUser()">Edit</button>
-        <button class="mx-2 btn btn-danger btn-sm" (click)="deleteUser()">Delete</button>
-    </div>
-</div>
 </ng-container>
 
 <gdm-orders-view [orders]="user.orders" *ngIf="viewOrders === true" (exitOrders)="unShowOrders()"></gdm-orders-view>

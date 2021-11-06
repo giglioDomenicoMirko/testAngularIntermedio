@@ -38,7 +38,6 @@ export class DataService {
   }
 
   editUser(user: any, id: string) {
-    // alert(`UTENTE ${id} ELIMINATO`);
     this.httpClient.delete('http://localhost:3000/anagrafica/' + id).subscribe();
     this.saveUser(user);
   }
