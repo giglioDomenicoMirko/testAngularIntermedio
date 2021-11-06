@@ -15,7 +15,6 @@ export class CardViewComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    console.log(`card-view avviato`);
     this.dataService.getAnagrafica().subscribe(data => this.anagrafica = data);
   }
 
