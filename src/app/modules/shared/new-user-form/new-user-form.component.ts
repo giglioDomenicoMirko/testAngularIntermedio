@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { IUser } from 'src/app/models/User';
 import { DataService } from 'src/app/shared/services/data.service';
 import { ViewService } from 'src/app/shared/services/view.service';
 import { CardViewComponent } from '../../pages/card-view/card-view.component';
@@ -12,6 +13,14 @@ import { CardViewComponent } from '../../pages/card-view/card-view.component';
 export class NewUserFormComponent implements OnInit {
 
   constructor(private view: ViewService, private dataService: DataService) { }
+
+  user = {
+    name: "",
+    mail: "",
+    location: {
+      address: ""
+    }
+  }
 
   ngOnInit(): void {
   }
