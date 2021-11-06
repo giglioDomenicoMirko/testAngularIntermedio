@@ -1,0 +1,25 @@
+<div class="container" *ngIf="anagrafica.length > 0; else noUser">
+    
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-2">Name</div>
+        <div class="col-2">Mail</div>
+        <div class="col-2">Address</div>
+        <div class="col-2">Orders: #</div>
+        <div class="col-3"></div>
+    </div>
+
+    <gdm-single-card [user]="user" (deleted)="deleteUser($event)" [view]="'list'" *ngFor="let user of anagrafica">
+    </gdm-single-card>
+
+</div>
+
+<ng-template #noUser>
+    <div class="container">
+        <hr />
+        <h1 class="text-center text-danger">
+            Non sono presenti utenti nel database!
+        </h1>
+        <hr />
+    </div>
+</ng-template>

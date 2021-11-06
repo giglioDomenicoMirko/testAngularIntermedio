@@ -1,0 +1,58 @@
+<div class="border shadow" *ngIf="view === 'card'">
+    <div>
+        <img src="{{ user.imageUrl }}" alt="FOTO {{user.name}}">
+    </div>
+    <hr>
+    <div class="p-2">
+        <div>
+            <span>{{ user.name }} {{ user.surname }}</span>
+        </div>
+        <div>
+            <span>{{ user.mail }}</span>
+        </div>
+        <div>
+            <span>{{ user.location.address }}, {{ user.location.city }}</span>
+        </div>
+        <div>
+            <span>Ordini: {{ contOrders }}</span>
+        </div>
+        <div>
+            <span>
+                <button class="btn text-primary" (click)="showOrders()">View orders</button>
+            </span>
+        </div>
+    </div>
+    <div class="my-3">
+        <button class="mx-2 btn btn-primary" (click)="editUser()">Edit</button>
+        <button class="mx-2 btn btn-danger" (click)="deleteUser()">Delete</button>
+    </div>
+</div>
+
+<!--  -->
+
+<ng-container *ngIf="view === 'list'">
+    <div class="row shadow">
+        <div class="col-1">
+            <img class="circleImage" src="{{ user.imageUrl }}" alt="FOTO {{user.name}}">
+        </div>
+        <div class="col-2 verticalAlign">
+            {{ user.name }} {{ user.surname }}
+        </div>
+        <div class="col-2 verticalAlign">
+            {{ user.mail }}
+        </div>
+        <div class="col-2 verticalAlign">
+            {{ user.location.address }}, {{ user.location.city }}
+        </div>
+        <div class="col-2 verticalAlign">
+            {{ contOrders }}
+            <button class="btn text-primary" (click)="showOrders()">View orders</button>
+        </div>
+        <div class="col-3 verticalAlign">
+            <button class="mx-2 btn btn-primary btn-sm" (click)="editUser()">Edit</button>
+            <button class="mx-2 btn btn-danger btn-sm" (click)="deleteUser()">Delete</button>
+        </div>
+    </div>
+</ng-container>
+
+<gdm-orders-view [orders]="user.orders" *ngIf="viewOrders === true" (exitOrders)="unShowOrders()"></gdm-orders-view>
