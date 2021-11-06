@@ -22,15 +22,24 @@ export class NewUserFormComponent implements OnInit {
     }
   }
 
+  editUserFlag = 0;
+
   ngOnInit(): void {
     if(this.dataService.userTemp != undefined) {
       this.user = this.dataService.userTemp;
-      alert(`variabile inizializzata`);
+      this.editUserFlag = 1;
     }
   }
 
   saveUser(form: NgForm) {
-    this.dataService.saveUser(form.value);
+    if(this.editUserFlag === 1){
+      alert('elemento da modificare');
+      // this.dataService.editUser(form.value);
+      this.editUserFlag = 0;
+    } else {
+      alert('elemento nuovo');
+      // this.dataService.saveUser(form.value);
+    }
     this.exit();
   }
 

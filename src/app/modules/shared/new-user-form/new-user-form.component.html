@@ -13,14 +13,14 @@
             <label for="email">Mail</label>
         </div>
         <div class="mb-4">
-            <input type="email" name="email" placeholder="{{user.mail}}" ngModel>
+            <input type="email" name="email" [(ngModel)]="user.mail">
         </div>
         
         <div>
             <label for="address">Address</label>
         </div>
         <div class="mb-4">
-            <input type="text" name="address" placeholder="{{user.location.address}}" ngModel>
+            <input type="text" name="address" [(ngModel)]="user.location.address">
         </div>
         
         <div>
