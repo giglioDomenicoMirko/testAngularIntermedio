@@ -1,5 +1,7 @@
 import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 import { IUser } from 'src/app/models/User';
+import { DataService } from 'src/app/shared/services/data.service';
+import { ViewService } from 'src/app/shared/services/view.service';
 
 @Component({
   selector: 'gdm-single-card',
@@ -16,7 +18,7 @@ export class SingleCardComponent implements OnInit {
 
   viewOrders = false;
 
-  constructor() { }
+  constructor(private dataService: DataService, private viewService: ViewService) { }
 
   ngOnInit(): void {
     this.loadCounterOrders();    
@@ -29,7 +31,9 @@ export class SingleCardComponent implements OnInit {
   }
 
   editUser() {
-    alert(`This function is under costruction`);
+    // alert(`This function is under costruction`);
+    this.viewService.view();
+    this.dataService.userTemp = this.user;
   }
 
   deleteUser() {

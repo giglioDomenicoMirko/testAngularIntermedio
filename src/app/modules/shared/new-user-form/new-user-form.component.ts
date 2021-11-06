@@ -23,6 +23,10 @@ export class NewUserFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if(this.dataService.userTemp != undefined) {
+      this.user = this.dataService.userTemp;
+      alert(`variabile inizializzata`);
+    }
   }
 
   saveUser(form: NgForm) {
