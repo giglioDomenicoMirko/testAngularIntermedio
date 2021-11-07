@@ -13,7 +13,7 @@ export class DataService {
   private userSubject = new BehaviorSubject<IUser[]>(this.userAnagrafica);
   public user$ = this.userSubject.asObservable();
 
-  public userTemp: any;
+  public userTemp!: IUser;
 
   constructor(private httpClient: HttpClient) { }
 
