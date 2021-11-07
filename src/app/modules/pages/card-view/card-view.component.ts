@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { IUser } from 'src/app/models/User';
 import { DataService } from 'src/app/shared/services/data.service';
@@ -10,7 +10,7 @@ import { DataService } from 'src/app/shared/services/data.service';
 })
 export class CardViewComponent implements OnInit {
 
-  anagrafica!: IUser[];
+  anagrafica: IUser[] = [];
 
   constructor(private dataService: DataService) { }
 
