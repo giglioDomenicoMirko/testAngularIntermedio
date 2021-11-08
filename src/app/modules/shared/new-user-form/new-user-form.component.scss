@@ -1,11 +1,19 @@
 .newUserFormContainer {
     position: absolute;
     width: 300px;
-    height: 450px;
-    top: calc(50% - 225px);
+    min-height: min-content;
+    top: 50px;
     left: calc(50% - 150px);
     background: white;
     z-index: 11;
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+input.ng-valid.ng-touched {
+    border: 1px solid green;
 }
 
 button {
