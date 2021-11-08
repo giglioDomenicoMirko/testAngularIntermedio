@@ -32,7 +32,7 @@ export class User implements IUser {
         public name = '',
         public surname = '',
         public mail = '',
-        public imageUrl = '',
+        public imageUrl = 'assets/img/default_profile_pic.jpg',
         public location: ILocation = {
             address: '',
             city: '',
