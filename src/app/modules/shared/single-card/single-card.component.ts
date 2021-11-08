@@ -24,10 +24,7 @@ export class SingleCardComponent implements OnInit {
   constructor(private dataService: DataService, private viewService: ViewService) { }
 
   ngOnInit(): void {
-    /* FUNZIONE DA MODIFICARE PER CARICARE IL CONTATORE */
-    for (let order in this.user.orders) {
-      this.contOrders++;
-    }
+    this.contOrders = this.user.orders.length;
   }
 
   editUser() {
