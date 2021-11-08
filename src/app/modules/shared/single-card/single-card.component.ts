@@ -1,4 +1,4 @@
-import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import { IUser } from 'src/app/models/User';
 
@@ -14,6 +14,7 @@ export class SingleCardComponent implements OnInit {
 
   @Input() user!: IUser;
   @Input() view!: string;
+
   @Output() deleted = new EventEmitter;
 
   contOrders = 0;
@@ -23,10 +24,7 @@ export class SingleCardComponent implements OnInit {
   constructor(private dataService: DataService, private viewService: ViewService) { }
 
   ngOnInit(): void {
-    /* FUNZIONE DA MODIFICARE PER CARICARE IL CONTATORE */
-    for (let order in this.user.orders) {
-      this.contOrders++;
-    }
+    this.contOrders = this.user.orders.length;
   }
 
   editUser() {
@@ -42,7 +40,6 @@ export class SingleCardComponent implements OnInit {
     this.viewOrders = true;
   }
 
-  @HostListener('document:keydown.escape')
   unShowOrders() {
     this.viewOrders = false;
   }

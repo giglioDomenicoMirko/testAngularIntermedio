@@ -1,38 +1,46 @@
 <div class="overlay" (click)="exit()"></div>
 
-<div class="newUserFormContainer p-5 text-center">
+<div class="newUserFormContainer p-3 text-center">
     <h1>New Users</h1>
-
     <form #f="ngForm" (ngSubmit)="saveUser(f)">
+        
+        <form id="name">
+            <div>
+                <label for="name">Name</label>
+            </div>
+            <div class="mb-4">
+                <input type="text" name="name" [(ngModel)]="user.name" required #name="ngModel" />
+                <p *ngIf="name.invalid && name.touched" class="text-danger my-0">Nome richiesto</p>
+            </div>
+        </form>
 
-        <div>
-            <label for="name">Name</label>
-        </div>
-        <div class="mb-4">
-            <input type="text" name="name" [(ngModel)]="user.name" />
-        </div>
-
-        <div>
-            <label for="email">Mail</label>
-        </div>
-        <div class="mb-4">
-            <input type="email" name="email" [(ngModel)]="user.mail" />
+        <div id="mail">
+            <div>
+                <label for="email">Mail</label>
+            </div>
+            <div class="mb-4">
+                <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" [(ngModel)]="user.mail" required #mail="ngModel" />
+                <p *ngIf="mail.invalid && mail.touched && mail.value === ''" class="text-danger my-0">Email richiesta</p>
+                <p *ngIf="mail.invalid && mail.touched && mail.value != ''" class="text-danger my-0">Email non valida</p>
+            </div>
         </div>
 
-        <div>
-            <label for="address">Address</label>
-        </div>
-        <div class="mb-4">
-            <input type="text" name="address" [(ngModel)]="user.location.address" />
+        <div id="address">
+            <div>
+                <label for="address">Address</label>
+            </div>
+            <div class="mb-4">
+                <input type="text" name="address" [(ngModel)]="user.location.address" required #address="ngModel" />
+                <p *ngIf="address.invalid && address.touched" class="text-danger my-0">Indirizzo richiesto</p>
+            </div>
         </div>
 
-        <div>
+        <div id="button">
             <button type="button" class="btn btn-danger mr-2 btn-lg" (click)="exit()">
                 Cancel
             </button>
-            <button type="submit" class="btn btn-primary ml-2 btn-lg">Save</button>
+            <button type="submit" class="btn btn-primary ml-2 btn-lg" [disabled]="f.invalid">Save</button>
         </div>
 
     </form>
-    
 </div>

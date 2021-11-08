@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { ViewService } from 'src/app/shared/services/view.service';
 
 @Component({
@@ -8,12 +9,34 @@ import { ViewService } from 'src/app/shared/services/view.service';
 })
 export class HeaderNavbarComponent implements OnInit {
 
-  constructor(private view: ViewService) { }
+  cardRoute = '';
+  listRoute = '';
 
-  ngOnInit(): void { }
+  constructor( private view: ViewService ) { }
+
+  ngOnInit(): void {
+    if(window.location.pathname === '/home') {
+      this.cardRoute = 'bold';
+    } else {
+      this.listRoute = 'bold';
+    }
+  }
 
   viewNewForm() {
     this.view.view();
+  }
+
+  changeBold(route: string) {
+    switch (route) {
+      case 'card':
+        this.cardRoute = 'bold';
+        this.listRoute = '';
+        break;
+      case 'list':
+        this.listRoute = 'bold';
+        this.cardRoute = '';
+        break;
+    }
   }
 
 }

@@ -1,4 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
+
+import { IOrder } from 'src/app/models/User';
 
 @Component({
   selector: 'gdm-orders-view',
@@ -7,7 +9,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class OrdersViewComponent implements OnInit {
 
-  @Input() orders!: any;
+  @Input() orders!: IOrder[];
+
   @Output() exitOrders = new EventEmitter();
 
   totalPrice = 0;
@@ -20,6 +23,7 @@ export class OrdersViewComponent implements OnInit {
     }
   }
 
+  @HostListener('document:keydown.escape')
   exitOrderPage() {
     this.exitOrders.emit();
   }
