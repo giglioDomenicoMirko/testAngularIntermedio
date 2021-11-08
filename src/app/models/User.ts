@@ -40,7 +40,7 @@ export class User implements IUser {
         },
         public orders: IOrder[] = []
     ) { }
-    public static builtinModules(user: IUser): User {
+    public static Build(user: IUser): User {
         return new this(
             user.id,
             user.name,
