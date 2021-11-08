@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+
 import { IUser } from 'src/app/models/User';
 import { DataService } from 'src/app/shared/services/data.service';
 
@@ -7,19 +9,24 @@ import { DataService } from 'src/app/shared/services/data.service';
   templateUrl: './list-view.component.html',
   styleUrls: ['./list-view.component.scss']
 })
-export class ListViewComponent implements OnInit {
+export class ListViewComponent implements OnInit, OnDestroy {
 
   anagrafica!: IUser[];
+  subscriptionOfAnagrafica!: Subscription;
 
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.dataService.getAnagrafica().subscribe(data => this.anagrafica = data);
+    this.subscriptionOfAnagrafica = this.dataService.getAnagrafica().subscribe(data => this.anagrafica = data);
   }
 
   deleteUser(user: IUser) {
     this.dataService.deleteUser(user);
     this.ngOnInit();
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptionOfAnagrafica.unsubscribe();
   }
 
 }
