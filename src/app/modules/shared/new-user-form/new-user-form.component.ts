@@ -25,6 +25,7 @@ export class NewUserFormComponent implements OnInit {
     }
   }
 
+  @HostListener('document:keydown.enter')
   saveUser(form: NgForm) {
     if(this.editUserFlag === 1){
       this.dataService.editUser(this.user);
