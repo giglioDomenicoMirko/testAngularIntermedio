@@ -2,10 +2,10 @@
     <h1>Users</h1>
     <div class="row">
         <div class="col-sm-2">
-            <a routerLink="home">Card View</a>
+            <a routerLink="home" [ngStyle]="{'font-weight': cardRoute}" (click)="changeBold('card')">Card View</a>
         </div>
         <div class="col-sm-2">
-            <a routerLink="list">list View</a>
+            <a routerLink="list" [ngStyle]="{'font-weight': listRoute}" (click)="changeBold('list')">list View</a>
         </div>
         <div class="col-sm-2">
             <button type="button" class="btn m-0 p-0" (click)="viewNewForm()">
